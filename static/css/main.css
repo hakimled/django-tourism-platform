@@ -1,0 +1,15 @@
+body{
+    background-color: turquoise;
+}
+h1{
+    text-align: center;
+    background-color: white;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+img{
+    width: 500px;
+}
+form{
+    display: block;
+}

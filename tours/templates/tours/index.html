@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tourism Platform</title>
+         
+        <style>
+            body{
+                margin-left: 20px;
+            }
+            img{
+                width: 400px;
+            }
+            /* Reset default styles */
+            body, ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+    
+            /* Navigation bar styles */
+            nav {
+                background-color: #333;
+                color: #fff;
+                padding: 10px 20px;
+            }
+    
+            nav ul {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+    
+            nav ul li {
+                margin-right: 20px;
+            }
+    
+            nav ul li:last-child {
+                margin-right: 0;
+            }
+    
+            nav ul li a {
+                color: #fff;
+                text-decoration: none;
+                font-weight: bold;
+                transition: color 0.3s ease;
+            }
+    
+            nav ul li a:hover {
+                color: #ffd700;
+            }
+        </style>
+    </head>
+        <nav>
+            <ul>
+                <li><a href="#companies">Companies</a></li>
+                <li><a href="#trips">Trips</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+            </ul>
+        </nav>
+    
+        <!-- Your content goes here -->
+        <div id="companies">
+            <h2>Companies</h2>
+            <!-- Insert content related to companies -->
+        </div>
+    
+        <div id="trips">
+            <h2>Trips</h2>
+            <!-- Insert content related to trips -->
+        </div>
+    
+        <div id="destinations">
+            <h2>Destinations</h2>
+            <!-- Insert content related to destinations -->
+        </div>
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to our Tourism Platform</h1>
+    </header>
+    <style>
+        .container{
+            width: 100%;
+            padding: 10px;
+            background:linear-gradient(135deg , #71b7e6, #9b59b6);
+            margin: auto;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+
+        }
+        div.trip{
+            background: #eee;
+            width: 410px;
+            border-radius: 5px;
+            border: 1px solid rgba(44,44,44,.3);
+            box-shadow: 0 5px 10px rgba(255,255,255, .5);
+            height: 500px;
+        }
+        .trip h3{
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 30px;
+            background-color:#fff;
+            margin: 10px 0;
+
+        }
+    </style>
+    <h2>Latest Trips</h2>
+    <main class="container">
+        
+        
+            {% for trip in latest_trips %}
+                <div class="trip">
+                    <h3>{{ trip.title }}</h3>
+                    <img src="{{trip.image.url}}" alt="{{trip.title}}">
+                    <p>{{ trip.description }}</p>
+                    <p>Destination: {{ trip.destination.name }}</p>
+                    <p>Start Date: {{ trip.start_date }}</p>
+                    <p>End Date: {{ trip.end_date }}</p>
+
+                </div>
+            {% endfor %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Tourism Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>
